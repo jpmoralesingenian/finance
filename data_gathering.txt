@@ -1,0 +1,42 @@
+S&P 500 Dividend yield for the month prior. 
+	Dividend per month: https://www.quandl.com/api/v3/datasets/MULTPL/SP500_DIV_MONTH.csv. https://www.quandl.com/data/MULTPL/SP500_DIV_MONTH-S-P-500-Dividend-by-Month
+	Original: SP500_DIV_MONTH.csv
+	SP500_READY.csv
+
+Compounded percent return for the S&P 500 for the 48 months prior
+	The S&P composite: https://www.quandl.com/api/v3/datasets/YALE/SPCOMP.csv
+	https://www.quandl.com/data/YALE/SPCOMP-S-P-Composite
+	SPCOMP_READY.csv
+
+The manufacturing capacity utilization for the 12 months prior to the S&P 500 performance month.
+	Capacity Utilization manufacturera (Viene desde 1971): https://www.quandl.com/api/v3/datasets/FRED/MCUMFN.csv
+	MCUMFN_READY.csv
+
+The 90-day average Treasury bill rate for the 16 months prior to the S&P 500 performance month.
+	US 3mth Treasury Bills (%) https://www.quandl.com/api/v3/datasets/WREN/W9.csv
+	Los TBills de 90 se acabaron en el 2000, toca coger las tasa del mercado secundario.
+	http://www.federalreserve.gov/releases/h15/data.htm
+	http://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=30846b728b43bf9854ca9f1f28ede894&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn
+	TBILL90.m
+
+
+The average monthly NYSE turnover ratio for the 53 months prior to the S&P 500 performance month.
+	US NYSE Volume (bn) https://www.quandl.com/api/v3/datasets/WREN/W7.csv
+	https://www.quandl.com/data/WREN/W7-US-NYSE-Volume-bn
+	http://finance.yahoo.com/q/hp?s=%5EGSPC&a=00&b=3&c=1950&d=10&e=10&f=2015&g=
+	http://real-chart.finance.yahoo.com/table.csv?s=%5EGSPC&a=00&b=3&c=1950&d=10&e=10&f=2015&g=m&ignore=.
+	Se hace con el S&P
+	NYSETO.m
+
+The rate of return of the long government bond for the 12 months prior to the S&P 500 performance month..
+	Treasury Yield 30 Years Index (Viene desde 1977) https://www.quandl.com/api/v3/datasets/YAHOO/INDEX_TYX.csv
+	Ese viene por día
+	TYX.m
+
+The 12 annual percentage change in the implicit price deflator based on the gross domestic product averaged over the 48 months prior to the S&P 500 performance month.
+	Gross Domestic Product (% change): https://www.quandl.com/api/v3/datasets/BEA/10105QTR.csv?transform=rdiff
+
+The result is the S&P for the month (so, Y)
+	https://www.quandl.com/data/YAHOO/INDEX_GSPC-S-P-500-Index
+	https://www.quandl.com/api/v3/datasets/YAHOO/INDEX_GSPC.csv
+	Y.m
