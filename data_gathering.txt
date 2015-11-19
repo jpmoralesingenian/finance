@@ -35,6 +35,7 @@ The rate of return of the long government bond for the 12 months prior to the S&
 
 The 12 annual percentage change in the implicit price deflator based on the gross domestic product averaged over the 48 months prior to the S&P 500 performance month.
 	Gross Domestic Product (% change): https://www.quandl.com/api/v3/datasets/BEA/10105QTR.csv?transform=rdiff
+	GDP.m
 
 The result is the S&P for the month (so, Y)
 	https://www.quandl.com/data/YAHOO/INDEX_GSPC-S-P-500-Index

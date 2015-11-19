@@ -38,7 +38,7 @@ fprintf('Loading data ...\n');
 %% S&P 500 Dividend yield for the month prior. 
 sp500 = loadData('SP500_READY.csv');
 %% Compounded percent return for the S&P 500 for the 48 months prior
-spret = loadData('SPCOMP_READY.csv');
+% spret = loadData('SPCOMP_READY.csv');
 %% The manufacturing capacity utilization for the 12 months prior to the S&P 500 performance month.
 manu  = loadData('MCUMFN_READY.csv');
 %% The 90-day average Treasury bill rate for the 16 months prior to the S&P 500 performance month.
@@ -47,7 +47,10 @@ tbill = loadData('TBILL90_READY.csv');
 nyseto = loadData('NYSETO_READY.csv');
 %% The rate of return of the long government bond for the 12 months prior to the S&P 500 performance month..
 tyx = loadData('TYX_READY.csv');
-X = horzcat(sp500,spret,manu,tbill,nyseto,tyx);
+%% gdp
+%% The 12 annual percentage change in the implicit price deflator based on the gross domestic product averaged over the 48 months prior to the S&P 500 performance month.
+gdp = loadData('GDP_READY.csv');
+X = horzcat(sp500,manu,tbill,nyseto,tyx,gdp);
 y = loadData('Y_READY.csv');
 m = length(y);
 final_dates = loadDates('Y_READY.csv');
@@ -103,10 +106,10 @@ theta = zeros(size(X,2), 1);
 [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
 
 % Plot the convergence graph
-figure;
-plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
-xlabel('Number of iterations');
-ylabel('Cost J');
+%figure;
+%plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+%xlabel('Number of iterations');
+%ylabel('Cost J');
 
 % Display gradient descent's result
 fprintf('Theta computed from gradient descent: \n');
@@ -146,7 +149,7 @@ fprintf('Solving with normal equations...\n');
 %
 
 %% Load Data
-X = horzcat(sp500,spret,manu,tbill,nyseto,tyx);
+X = horzcat(sp500,manu,tbill,nyseto,tyx,gdp);
 y = loadData('Y_READY.csv');
 m = length(y);
 
@@ -173,7 +176,12 @@ fprintf('\n');
 
 
 % ============================================================
-
+% Draw the damn thing
+% ============================================================
+figure;
+plot(final_dates, final_y,"r",final_dates,final_gradient,"g",final_dates,final_normal,"b");
+%xlabel('Number of iterations');
+%ylabel('Cost J');
 % fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
 %         '(using normal equations):\n $%f\n'], price);
 final_titles = ["date","SnP","Predicted GD","Predicted NE"];
