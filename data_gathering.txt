@@ -1,3 +1,5 @@
+Factors that influence stocks
+
 S&P 500 Dividend yield for the month prior. 
 	Dividend per month: https://www.quandl.com/api/v3/datasets/MULTPL/SP500_DIV_MONTH.csv. https://www.quandl.com/data/MULTPL/SP500_DIV_MONTH-S-P-500-Dividend-by-Month
 	Original: SP500_DIV_MONTH.csv
@@ -41,3 +43,20 @@ The result is the S&P for the month (so, Y)
 	https://www.quandl.com/data/YAHOO/INDEX_GSPC-S-P-500-Index
 	https://www.quandl.com/api/v3/datasets/YAHOO/INDEX_GSPC.csv
 	Y.m
+
+Factors that influence bonds
+
+The 5-Year Treasury Bond yield averaged for the 13 months before the long-term government bond performance month.
+
+The S&P 500 dividend yield average for the 21 months before the long-term government bond performance month.
+The 90-day treasury bill yield average for the 13 months before the long-term government bond performance month.
+The long-term government bond return average for the 3 months prior to the long-term government bond performance month.
+The long-term government bond return averaged over months 14-38 prior to the long-term government bond performance month. This is a reversion-to-the- mean variable.
+The manufacturing capacity utilization in the month before the long-term government bond performance month.
+The annualized default spread between the Baa Moody’s corporate bond rate and the 10-year government bond rate average for the 24 months before the long-term government bond performance month.a
+	BAA de Moodys = https://www.quandl.com/data/MOODY/BAAYLD-Baa-Corporate-Bond-Yield
+	10 year government bond rate = 	
+
+The rate of return for the S&P 500 without dividends for the 3 months before the long-term government bond performance month.
+The civilian labor unemployment rate for the 14 months before the long-term government bond performance month.
+
